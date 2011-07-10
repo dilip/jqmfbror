@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Jqmfbror::Application.load_tasks
+Iresume::Application.load_tasks

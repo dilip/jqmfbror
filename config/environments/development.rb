@@ -1,4 +1,6 @@
-Jqmfbror::Application.configure do
+require 'mongomatic'
+
+Iresume::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -22,5 +24,13 @@ Jqmfbror::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  Mongomatic.db = Mongo::Connection.new.db("jqmfbror_dev")
+
+  config.facebook_app_id = 'YOUR_APP_ID'
+  config.facebook_app_secret = 'YOUR_APP_SECRET'
+  config.facebook_redirect_uri = 'http://localhost:3000/auth/facebook/callback' 
+  #Your redirect URI for dev environment.  /auth/facebook/callback should not be changed as it is used by omniauth.
+  #This redirect domain must match the settings in your Facebook developer app.
 end
 

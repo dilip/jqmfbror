@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Jqmfbror::Application.config.secret_token = '4e91621156e34cf1f16ace5d82f9fc0a37e5dee75533cfc1500b5c67d63c8fb96c37efcd43ce2a5170fcde13658730884d13756ff73250e34260783295b985bb'
+Iresume::Application.config.secret_token = '9a372c68ea24fe52473f198fae4b4bf0e5005db004c246ae8b80b7ad0fd54d8f36f9ca3ceea9f83bfd030d6cdae266731ede7e2cf9e266e84e4b76528dddb897'

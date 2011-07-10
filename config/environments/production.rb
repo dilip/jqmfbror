@@ -1,4 +1,4 @@
-Jqmfbror::Application.configure do
+Iresume::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -46,4 +46,14 @@ Jqmfbror::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  uri = URI.parse(ENV['MONGOHQ_URL'])
+  conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
+  Mongomatic.db = conn.db(uri.path.gsub(/^\//, ''))
+
+  config.facebook_app_id = 'YOUR_APP_ID'
+  config.facebook_app_secret = 'YOUR_APP_SECRET'
+  config.facebook_redirect_uri = 'http://jqmfbror/auth/facebook/callback' 
+  #Your redirect URI for dev environment.  /auth/facebook/callback should not be changed as it is used by omniauth.
+  #This redirect domain must match the settings in your Facebook developer app.
 end
