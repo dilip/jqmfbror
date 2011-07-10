@@ -1,0 +1,39 @@
+<script>
+getFriendList("<%= @fb_access_token %>");
+function getFriendList(fbAccessToken) {
+    $.getJSON("https://graph.facebook.com/me/friends?callback=?",
+            $.param({"access_token" : fbAccessToken}),
+            function(json) {
+                friend_list_view = $("#friend_list");
+                $.each(json.data, 
+                    function(i, friend) {
+                        friend_list_view.append(
+                            "<li>" +
+                                "<a href='/friend_details/" + friend["id"] + "'>" + 
+                                    friend["name"] + 
+                                    "<img src='http://graph.facebook.com/" + friend["id"] + "/picture'/>" +
+                                "</a>" + 
+                            "</li>"
+                        );
+                    });
+                friend_list_view.listview("refresh");
+            }
+    );
+}
+
+</script>
+<div data-role="page" id="all_friends" data-url="all_friends" >
+
+    <div data-role="header" data-backbtn="false">
+        <h1>All Friends</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <ul id="friend_list" data-role="listview" data-theme="g" data-filter="true" data-filter-placeholder="Search people..." data-filter-theme="b">
+        </ul>
+    </div><!-- /content -->
+    <div data-role="footer">
+        <a href="/logout" rel="external">Logout</a>
+    </div><!-- /header -->
+</div><!-- /page -->
+
