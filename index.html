@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jqmfbror : Tutorial JQueryMobile app that uses Facebook integration with a Ruby on Rails backend." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jqmfbror</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dilip/jqmfbror">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Jqmfbror</h1>
+          <h2 id="project_tagline">Tutorial JQueryMobile app that uses Facebook integration with a Ruby on Rails backend.</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/dilip/jqmfbror/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/dilip/jqmfbror/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>JQueryMobile app with Facebook integration and a Ruby on Rails backend</h1>
+
+<p>I am currently playing around with mobile app development.  I want to develop a mobile app that:</p>
+
+<ul>
+<li>Works across multiple devices (iPhone, Android, etc)</li>
+<li>Integrates with Facebook</li>
+<li>Has a Ruby on Rails backend to store app-specific data</li>
+</ul><p>I have implemented a toy jQueryMobile app to demonstrate the implementation of the above requirements. The toy app simply asks you to login with your Facebook credentials and lists your friends.  You can try it out by visiting <a href="http://jqmfbror.heroku.com">http://jqmfbror.heroku.com</a> using your mobile or desktop web browser.  The full source code for app is available at <a href="https://github.com/dilip/jqmfbror">https://github.com/dilip/jqmfbror</a>.</p>
+
+<p>Facebook authentication happens at the Ruby on Rails backend using the Omniauth gem.  This means that the backend can uniquely identify repeat visitors and associate app-specific data with them.  The backend can use the Facebook access token generated on login to retrieve the user's Facebook data, and pass it on for display on the frontend.  Alternatively, the backend can simply pass the Facebook access token to the frontend, which then uses JSONP to retrieve the user's Facebook data.  The latter approach is more efficient as it decreases the load on the backend.  The toy app uses this approach.  </p>
+
+<p>The app also uses MongoDb (instead of mysql) and Heroku (for super-easy hosting of Ruby on Rails applications).</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jqmfbror maintained by <a href="https://github.com/dilip">dilip</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
